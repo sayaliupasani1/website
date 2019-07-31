@@ -1,0 +1,4 @@
+#Excluded files and directories
+
+terraform/.terraform/*
+terraform/terraform.*
