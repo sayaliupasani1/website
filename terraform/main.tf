@@ -7,7 +7,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "website_s3" {
-	bucket = "${var.domain_name}"
+	bucket = "www.${var.domain_name}"
 	acl = "public-read"
 
 	policy = <<POLICY
@@ -50,8 +50,11 @@ resource "null_resource" "delete_files_s3" {
 	}
 }
 
-resource "aws_s3_bucket_object" "config" {
-	bucket = "${aws_s3_bucket.website_s3.id}"
-	key = "config.toml"
-	source = "${path.cwd}/../config.toml"
+#### Configuring ACM certificate
+
+resource "aws_acm_certificate" "site_cert" {
+	domain_name = "*.${var.domain_name}"
+	validation_method = "EMAIL"
+
+	subject_alternative_names = ["${var.domain_name}"]
 }

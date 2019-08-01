@@ -11,6 +11,6 @@ variable "region" {
 }
 
 variable "domain_name" {
-	default = "www.sayaliupasani.com"
+	default = "sayaliupasani.com"
 }
 
