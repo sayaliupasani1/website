@@ -1,14 +1,14 @@
 #------root/main.tf---------
 
 provider "aws" {
-	region = "${var.region}"
+	region     = "${var.region}"
 	access_key = "${var.aws_access_key}"
 	secret_key = "${var.aws_secret_key}"
 }
 
 resource "aws_s3_bucket" "website_s3" {
 	bucket = "www.${var.domain_name}"
-	acl = "public-read"
+	acl    = "public-read"
 
 	policy = <<POLICY
 {
@@ -28,8 +28,8 @@ resource "aws_s3_bucket" "website_s3" {
  POLICY
  	
  	website {
- 	  index_document="index.html"
- 	  error_document="404.html"
+ 	  index_document ="index.html"
+ 	  error_document ="404.html"
  	}
 
 	tags = {
@@ -45,16 +45,63 @@ resource "null_resource" "upload_files_s3" {
 
 resource "null_resource" "delete_files_s3" {
 	provisioner "local-exec" {
-	  when = "destroy"
+	  when    = "destroy"
 	  command = "aws s3 rm s3://${aws_s3_bucket.website_s3.id} --recursive"
 	}
 }
 
-#### Configuring ACM certificate
+/* Using an existing ACM certificate
+data resource is to check its existence via terraform */
 
-resource "aws_acm_certificate" "site_cert" {
-	domain_name = "*.${var.domain_name}"
-	validation_method = "EMAIL"
+data "aws_acm_certificate" "site_cert" {
+	domain = "${var.domain_name}"
+	statuses = ["ISSUED"]
+}
 
-	subject_alternative_names = ["${var.domain_name}"]
+
+ # Configuring CloudFront distribution
+
+resource "aws_cloudfront_distribution" "site_distribution" {
+ 	origin {
+
+ 	  custom_origin_config {
+ 	    http_port              = "80"
+ 	    https_port             = "443"
+ 	    origin_protocol_policy ="http-only"
+ 	    origin_ssl_protocols   =["TLSv1", "TLSv1.1", "TLSv1.2"]
+ 	  }
+
+ 	  domain_name = "${aws_s3_bucket.website_s3.bucket_regional_domain_name}"
+ 	  origin_id = "${var.domain_name}"
+ 	}
+ 	enabled             = true
+ 	retain_on_delete    = true
+ 	default_root_object = "index.html"
+
+ 	default_cache_behavior {
+
+ 	  viewer_protocol_policy = "redirect-to-https"
+ 	  allowed_methods  = ["GET", "HEAD"]
+ 	  cached_methods   = ["GET", "HEAD"]
+ 	  target_origin_id = "${var.domain_name}"
+
+ 	  forwarded_values {
+ 	    query_string = false
+ 	    cookies {
+ 	      forward = "none"
+ 	    }
+ 	  }
+ 	}
+ 	aliases = ["${var.domain_name}"]
+
+ 	viewer_certificate {
+ 	  acm_certificate_arn = "${data.aws_acm_certificate.site_cert.arn}"
+ 	  ssl_support_method = "sni-only"
+ 	}
+
+ 	restrictions {
+ 	  geo_restriction {
+ 	    restriction_type = "none"
+ 	  }
+ 	}
 }
