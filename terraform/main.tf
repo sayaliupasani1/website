@@ -71,7 +71,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
  	    origin_ssl_protocols   =["TLSv1", "TLSv1.1", "TLSv1.2"]
  	  }
 
- 	  domain_name = "${aws_s3_bucket.website_s3.bucket_regional_domain_name}"
+ 	  domain_name = "${aws_s3_bucket.website_s3.website_endpoint}"
  	  origin_id = "${var.domain_name}"
  	}
  	enabled             = true
@@ -96,7 +96,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
 
  	viewer_certificate {
  	  acm_certificate_arn = "${data.aws_acm_certificate.site_cert.arn}"
- 	  ssl_support_method = "sni-only"
+ 	  ssl_support_method  = "sni-only"
  	}
 
  	restrictions {
@@ -104,4 +104,22 @@ resource "aws_cloudfront_distribution" "site_distribution" {
  	    restriction_type = "none"
  	  }
  	}
+}
+
+/* Using an existing AWS hosted zone (if you register your domain with Amazon, this hosted zone will be created automatically. You can delete the entries so that the records are terraform controlled.) */
+
+data "aws_route53_zone" "hosted-zone" {
+	name = "${var.domain_name}"
+}
+
+resource "aws_route53_record" "root_record" {
+	zone_id = "${data.aws_route53_zone.hosted-zone.zone_id}"
+	name    = ""
+	type    = "A"
+
+	alias {
+	  name                    = "${aws_cloudfront_distribution.site_distribution.domain_name}"
+	  zone_id                 = "${aws_cloudfront_distribution.site_distribution.hosted_zone_id}"
+	  evaluate_target_health  = false
+	}
 }
