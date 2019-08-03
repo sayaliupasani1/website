@@ -27,3 +27,4 @@ script:
   - hugo
   - terraform init ./terraform
   - terraform plan ./terraform
+  - terraform apply ./terraform

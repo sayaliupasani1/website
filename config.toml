@@ -1,7 +1,8 @@
-baseurl = "https://sayaliupasani.com"
+#baseurl = "https://sayaliupasani.com"
+baseurl = "http://192.168.10.218:8000"
 title = "Sayali Upasani"
 
-theme = "coder"
+theme = "coder-theme"
 
 DefaultContentLanguage = "en"
 
@@ -89,7 +90,7 @@ pygmentsUseClasses = true
             [[languages.en.menu.main]]
                 name = "Art"
                 weight = 4
-                url = "Art"
+                url = "art"
 
             [[languages.en.menu.main]]
                 name = "Contact me"
