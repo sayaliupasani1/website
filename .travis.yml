@@ -25,6 +25,14 @@ before_script:
 script:
   - terraform --version
   - hugo
-  - terraform init ./terraform
-  - terraform plan ./terraform
-  - terraform apply ./terraform
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: 
+      - terraform init ./terraform
+      - terraform plan ./terraform
+      - terraform apply ./terraform -auto-approve
+
+after_deploy:
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST --paths "/*"
