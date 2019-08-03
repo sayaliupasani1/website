@@ -26,3 +26,4 @@ script:
   - terraform --version
   - terraform init ./terraform
   - echo $foo
+  - terraform plan ./terraform
