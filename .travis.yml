@@ -1,5 +1,11 @@
 dist: xenial
-sudo: false
+
+addons:
+  snaps:
+    - name: hugo
+    - name: aws-cli
+      classic: true
+      channel: latest/edge
 
 branches:
   only:
@@ -13,6 +19,10 @@ before_install:
   - mv /tmp/terraform ~/bin
   - export PATH="~/bin:$PATH"
 
-script: 
+before_script:
+  - ./terraform/aws_envs.sh
+
+script:
   - terraform --version
-  - aws iam get-user
+  - terraform init ./terraform
+  - echo $foo

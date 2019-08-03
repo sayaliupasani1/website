@@ -1,9 +1,10 @@
 #------root/main.tf---------
 
+# Grab provider info from env variables
 provider "aws" {
-	region     = "${var.region}"
-	access_key = "${var.aws_access_key}"
-	secret_key = "${var.aws_secret_key}"
+#	region     = "${var.region}"
+#	access_key = "${var.aws_access_key}"
+#	secret_key = "${var.aws_secret_key}"
 }
 
 resource "aws_s3_bucket" "website_s3" {
@@ -75,7 +76,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
  	  origin_id = "${var.domain_name}"
  	}
  	enabled             = true
- 	retain_on_delete    = true
+ 	#retain_on_delete    = true
  	default_root_object = "index.html"
 
  	default_cache_behavior {
