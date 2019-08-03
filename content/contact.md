@@ -2,7 +2,35 @@
 title = "Contact"
 slug = "contact"
 +++
+<style>
+body {
+  padding: 20px;
+}
 
-Email: [sayaliupasani@gmail.com](mailto:sayaliupasani@gmail.com) 
+main {
+  height: 200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  overflow: auto;
+}
 
-Linkedin: [sayaliupasani](https://www.linkedin.com/in/sayaliupasani/)
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</style>
+
+<main>
+ 	<div>
+     Email: <a href = "mailto: sayaliupasani@gmail.com">sayaliupasani@gmail.com</a>
+     <br>
+     <br>
+     Linkedin: <a href = "https://linkedin.com/in/sayaliupasani/">LinkedIn</a>
+  </div>
+</main>

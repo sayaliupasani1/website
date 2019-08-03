@@ -1,7 +1,7 @@
-baseurl = "http://www.example.com"
+baseurl = "https://sayaliupasani.com"
 title = "Sayali Upasani"
 
-theme = "coder-portfolio"
+theme = "coder"
 
 DefaultContentLanguage = "en"
 
@@ -12,20 +12,20 @@ pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 pygmentsUseClasses = true
 
-disqusShortname = "yourdiscussshortname"
+#disqusShortname = "yourdiscussshortname"
 
 [params]
     author = "Sayali Upasani"
     description = "Sayali's personal website"
     keywords = "blog,developer,personal"
-    info = "WEB AND APPS ENGINEER"
+    info = "DevOps | Engineer"
     avatarurl = "img/sayali.jpg"
-    footercontent = "Enter a text here."
+    footercontent = "Whatever you think, you can manifest!."
     #fixedbarContent = "Do you want to know me more private?→"
     #fixedbarContentAfter = "Thank You! Please share it if you like it→"
 
-    hideCredits = false
-    hideCopyright = false
+    hideCredits = true
+    hideCopyright = true
 
     snsShare = true
 
@@ -84,6 +84,13 @@ disqusShortname = "yourdiscussshortname"
                 name = "Projects"
                 weight = 3
                 url = "projects"
+
+
+            [[languages.en.menu.main]]
+                name = "Art"
+                weight = 4
+                url = "Art"
+
             [[languages.en.menu.main]]
                 name = "Contact me"
                 weight = 5
