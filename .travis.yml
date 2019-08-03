@@ -24,6 +24,6 @@ before_script:
 
 script:
   - terraform --version
+  - hugo
   - terraform init ./terraform
-  - echo $foo
   - terraform plan ./terraform
