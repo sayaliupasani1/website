@@ -123,3 +123,15 @@ resource "aws_route53_record" "root_record" {
 	  evaluate_target_health  = false
 	}
 }
+
+# Create s3 backend resource
+
+terraform {
+	backend "s3" {
+		bucket = "sayaliupasani-terra-state"
+		encrypt = true
+		region = "us-east-1"
+		key = "terraform.tfstate"
+		dynamodb_table = "sayaliupasani-terra-db"
+	}
+}
