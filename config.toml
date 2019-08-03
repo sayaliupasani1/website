@@ -1,5 +1,4 @@
-#baseurl = "https://sayaliupasani.com"
-baseurl = "http://192.168.10.218:8000"
+baseurl = "https://sayaliupasani.com"
 title = "Sayali Upasani"
 
 theme = "coder-theme"
