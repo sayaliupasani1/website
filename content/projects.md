@@ -5,6 +5,23 @@ thumbnail = "images/webpage.png"
 description = "projects"
 +++
 
+#### Deploy static website with CI/CD
+
+{{% portfolio image="/images/website-home.png" alt="Deploy website with Terraform and TravisCI" %}}
+
+#### Deploy website with Terraform and TravisCI
+
+This project includes Terraform code to deploy a static website on AWS s3. It also incorporates automated builds, tests and deployments with TravisCI.
+
+###### Highlights:
+
+- The website is deployed on AWS s3 and it uses Cloudfront distribution's caching and SSL features.
+- With TravisCI, all you need to do is a git push, which initiates automatic build and deployment.
+- For more details on the process, check my blog [link](https://sayaliupasani.com/posts/website-terraform/).
+
+Github link: [Website](https://github.com/sayaliupasani1/website)
+{{% /portfolio %}}
+
 #### Endpoint Health Checker
 
 {{% portfolio image="/images/endpoint.png" alt="Endpoint Health Checker" %}}
@@ -31,3 +48,4 @@ Github link: [Endpoint Health checker](https://github.com/sayaliupasani1/url_sta
 This is a python application to scrape relevant news updates from multiple sites and display it in an aggregated way.
 
 Github link: [News Bulletin Aggregator](https://github.com/sayaliupasani1/content_aggregator)
+{{% /portfolio %}}
