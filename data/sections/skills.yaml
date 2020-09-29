@@ -1,0 +1,48 @@
+# section information
+section:
+  name: Skills
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Terraform
+  icon: "images/skills/terraform.png"
+  summary: Terraform to codify infrastructure on various providers.
+  url: "https://www.terraform.io/"
+
+- name: Ansible
+  icon: "images/skills/ansible.png"
+  summary: "Experienced using Ansible for configuration management of network systems"
+  url: "https://www.ansible.com/"
+
+- name: Load Balancers
+  icon: "images/skills/lb.png"
+  summary: "Worked with multi-vendor load-balancers to achieve mission specific requirements. Also, configured them using Ansible"
+
+- name: Firewalls
+  icon: "images/skills/fw.png"
+  summary: "Worked with multi-vendor firewalls and managed them using Ansible"
+
+- name: Docker
+  icon: "images/skills/docker.svg"
+  summary: Containerize applications and systems using Docker
+  url: "https://www.docker.com/"
+
+- name: Monitoring systems
+  icon: "images/skills/zabbix.png"
+  summary: "Experience in using Zabbix, AlienVault for monitoring systems"
+  #url: "https://prometheus.io/"
+
+- name: Linux
+  icon: "images/skills/linux.png"
+  summary: "Using as the main operating system. Capable of writing bash/shell scripts."
+
+- name: Git
+  icon: "images/skills/git.png"
+  summary: "Experienced with git-based development. Mostly, use Github and Bitbucket."
+  url: "https://git-scm.com/"

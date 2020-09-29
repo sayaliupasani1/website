@@ -1,0 +1,58 @@
+# section information
+section:
+  name: Projects
+  enable: true
+  weight: 4
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: Professional
+  filter: "professional"
+# - name: Academic
+#   filter: "academic"
+- name: Hobby
+  filter: "hobby"
+
+# your projects
+projects:
+- name: Deploy Website with CI/CD
+  #logo: images/projects/kubernetes.png
+  #role: Contributer
+  #timeline: "March 2018 - Present"
+  repo: https://github.com/sayaliupasani1/website # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  #url: ""  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: Codifying AWS infrastructure using Terraform to deploy a static website on a s3 bucket. This also incorporates automated builds, tests and deploys with TravisCI
+  tags: ["professional", "CICD", "Terraform"]
+
+- name: Endpoint health checker
+  #logo: images/projects/kubernetes.png
+  #role: Developer
+  #timeline: "Jun 2018 - Present"
+  repo: https://github.com/sayaliupasani1/url_status_docker
+  #url: ""
+  summary: A docker containerized python app that verifies the status of user-specified URI.
+  tags: ["professional", "Ansible","Docker"]
+
+- name: NEWS BULLETIN AGGREGATOR
+  #role: Team Lead
+  #timeline: "Jan 2017 - Nov 2017"
+  repo: https://github.com/sayaliupasani1/content_aggregator
+  #url: "https://www.example.com"
+  summary: A python application to scrape relevant news updates from multiple sites and display it in an aggregated way.
+  tags: ["professional","python"]
+
+- name: IaC F5 LoadBalancers and WAF
+  summary: Codified the infrastructure around F5 loadbalancers/WAF serving multiple servers/applications
+  tags: ["professional", "Networking"]
+
+- name: IaC Juniper High-End Firewalls
+  summary: Designed a secured infra and codified junipers management.
+  tags: ["professional", "Networking"]
+
+
+
