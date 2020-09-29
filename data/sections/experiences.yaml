@@ -1,0 +1,64 @@
+# section information
+section:
+  name: Experiences
+  enable: true
+  weight: 2
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+# Your experiences
+experiences:
+- company:
+    name: Bambora.
+    url: "https://www.bambora.com/"
+    location: Victoria, BC
+    # company overview
+    #overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+  positions:
+  - designation: Site Reliability Engineer, Infrastructure.
+    start: January 2020
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    # end: Dec 2020
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Design and build the infrastructure
+    - Codifying the infrastructure builds
+    - Work in an Agile culture
+
+- company:
+    name: Radware, Inc.
+    url: "https://www.radware.com/"
+    location: New Jersey, US
+    #overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
+  positions:
+  - designation: Tier3 TAC Engineer
+    start: Oct 2018
+    end: April 2019
+    responsibilities:
+    - Provide dedicated support for multiple high profile customers with refined SLAs
+    - Help customers architect their network to achieve optimal efficiency
+    - Recreate scenarios for debugging complex network issues
+    - Contribute to building knowledge base
+
+  - designation: Tier2 TAC Engineer
+    start: Nov 2015
+    end: Sep 2018
+    responsibilities:
+      - Identifying the requirements and implementing layer4 to layer7 load balancing techniques
+      - Configuring layer 3 security devices specializing in behavorial DoS mitigation
+      - Deploying software defined solutions for achieving live mitigation of attacks
+
+# - company:
+#     name: Intern Counting Company (ICC).
+#     url: "https://www.intern.com"
+#     location: Intern Land
+#     overview: Intern counting Company (ICC) is responsible for counting worldwide intern Engineers.
+#   positions:
+#   - designation: Intern
+#     start: Jun 2015
+#     end: Jan 2016
+#     responsibilities:
+#     - Count lost of interns.
+#     - Count more interns.
+#     - Count me as an intern.

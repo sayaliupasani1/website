@@ -1,0 +1,77 @@
+# section information
+section:
+  name: About
+  enable: true
+  weight: 1
+  showOnNavbar: true
+
+# your designation
+designation: DevOps | Network Engineer
+# your company information
+company:
+  name: Bambora
+  url: "https://www.bambora.com/"
+
+# your resume. this file path should be relative to you "static" directory
+resume: "files/Sayali_Upasani_CV.pdf"
+
+# a summary about you
+summary: 'I enjoy designing infrastructure, codifying the process of building it up, and to be fair even troubleshooting it :)'
+
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "sayaliupasani@gmail.com"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://github.com/sayaliupasani1"
+
+# - name: Stackoverflow
+#   icon: "fab fa-stack-overflow"
+#   url: "#"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/sayaliupasani/"
+
+# - name: Twitter
+#   icon: "fab fa-twitter"
+#   url: "#"
+
+# - name: Facebook
+#   icon: "fab fa-facebook"
+#   url: "#"
+
+# your soft skills
+# give the percentage between 50 to 100 with 5 intervals.
+# currently supported colors: blue, yellow, pink, green, sky, orange
+softSkills:
+- name: Infrastructure
+  percentage: 75
+  color: orange
+- name: Load Balancers
+  percentage: 90
+  color: sky
+- name: Ansible
+  percentage: 75
+  color: yellow
+- name: Firewalls
+  percentage: 90
+  color: green
+- name: Terraform
+  percentage: 70
+  color: blue
+- name: Docker
+  percentage: 50
+  color: pink
+
+# you can also provide color code instead of pre-defined color name
+# - name: Example 1
+#   percentage: 75
+#   color: "#00adb5"
+# - name: Example 2
+#   percentage: 65
+#   color: "#8b8383"
