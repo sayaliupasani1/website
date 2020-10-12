@@ -63,7 +63,7 @@ params:
   author:
     name: "Sayali Upasani"
     nickname: "Sayali"
-    image: "images/avatar.png"
+    image: "images/myavatar.png"
     # give your some contact information. they will be used in the footer
     contactInfo:
       email: "sayaliupasani@gmail.com"
