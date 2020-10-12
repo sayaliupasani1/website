@@ -3,9 +3,11 @@ dist: xenial
 addons:
   snaps:
     - name: hugo
-    - name: aws-cli
-      classic: true
-      channel: latest/edge
+  apt:
+    update: true
+    # - name: aws-cli
+    #   classic: true
+    #   channel: latest/edge
 
 branches:
   only:
@@ -13,6 +15,7 @@ branches:
     - toha_website
 
 before_install:
+  - sudo apt-get install -y awscli
   - curl -sLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.12.6/terraform_0.12.6_linux_amd64.zip
   - unzip /tmp/terraform.zip -d /tmp
   - mkdir -p ~/bin
@@ -34,4 +37,4 @@ deploy:
 
 
 after_deploy:
-  - /snap/bin/aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST --paths "/*"
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST --paths "/*"

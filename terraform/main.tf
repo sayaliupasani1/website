@@ -38,14 +38,14 @@ resource "aws_s3_bucket" "website_s3" {
 
 resource "null_resource" "upload_files_s3" {
 	provisioner "local-exec" {
-	  command = "/snap/bin/aws s3 sync ${path.cwd}/../public s3://${aws_s3_bucket.website_s3.id}"
+	  command = "aws s3 sync ${path.cwd}/../public s3://${aws_s3_bucket.website_s3.id}"
 	}
 }
 
 resource "null_resource" "delete_files_s3" {
 	provisioner "local-exec" {
 	  when    = "destroy"
-	  command = "/snap/bin/aws s3 rm s3://${aws_s3_bucket.website_s3.id} --recursive"
+	  command = "aws s3 rm s3://${aws_s3_bucket.website_s3.id} --recursive"
 	}
 }
 
