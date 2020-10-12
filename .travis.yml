@@ -21,8 +21,6 @@ before_install:
   - export PATH="~/bin:$PATH"
 
 before_script:
-  - which aws
-  - ls -lah /snap/aws-cli/161/bin/
   - ./terraform/aws_envs.sh
 
 script:
@@ -36,4 +34,4 @@ deploy:
 
 
 after_deploy:
-  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST --paths "/*"
+  - /snap/bin/aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST --paths "/*"
