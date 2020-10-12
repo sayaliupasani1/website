@@ -22,7 +22,7 @@ disqusShortname: does-not-exist
 # Enable global emoji support
 enableEmoji: true
 
-publishdir: ./public_toha
+publishdir: ./public
 
 # Custom parameters
 params:
