@@ -10,6 +10,7 @@ addons:
 branches:
   only:
     - master
+    - toha_website
 
 before_install:
   - curl -sLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.12.6/terraform_0.12.6_linux_amd64.zip
@@ -20,6 +21,8 @@ before_install:
   - export PATH="~/bin:$PATH"
 
 before_script:
+  - which aws
+  - ls -lah /snap/aws-cli/161/bin/
   - ./terraform/aws_envs.sh
 
 script:
