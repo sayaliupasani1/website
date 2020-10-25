@@ -5,8 +5,8 @@ hero: /images/posts/tech-blogs/terraform.png
 author: "Sayali Upasani"
 menu:
   sidebar:
-    name: Technical Blogs
-    identifier: writing-post-md-guide
+    name: Creating and Hosting Personal Website
+    identifier: website
     parent: tech-blogs
     weight: 30
 ---

@@ -22,9 +22,10 @@ experiences:
     # end: Dec 2020
     # give some points about what was your responsibilities at the company.
     responsibilities:
-    - Design and build the infrastructure
-    - Codifying the infrastructure builds
-    - Work in an Agile culture
+    - Design the infrastructure as a part of datacenter migration considering scalability, security and multi-datacenter requirements
+    - Configuring firewalls, switches, load-balancers, WAFs to meet application requirements using Ansible
+    - Codifying the infrastructure using configuration management tools and CICD pipelines for idempotent builds and immutable deploys
+    - Creating and using proper logging rules/alerts for monitoring (using Elastic stack) for the stability of infrastructure
 
 - company:
     name: Radware, Inc.

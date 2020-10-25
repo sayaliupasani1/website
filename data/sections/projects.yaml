@@ -47,11 +47,11 @@ projects:
   tags: ["professional","python"]
 
 - name: IaC F5 LoadBalancers and WAF
-  summary: Codified the infrastructure around F5 loadbalancers/WAF serving multiple servers/applications
+  summary: Codified the infrastructure around F5 loadbalancers/WAF serving multiple servers/applications behind them.
   tags: ["professional", "Networking"]
 
 - name: IaC Juniper High-End Firewalls
-  summary: Designed a secured infra and codified junipers management.
+  summary: Designed a secured infra and codified the Juniper firewalls for managing security zones, clustering of two instances, security policies, NAT policies and other aspects of routing/switching.
   tags: ["professional", "Networking"]
 
 
