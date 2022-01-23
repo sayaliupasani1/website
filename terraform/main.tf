@@ -1,8 +1,18 @@
 #------root/main.tf---------
 
 # Grab provider info from env variables
+terraform {
+	required_version = ">= 0.12"
+	
+	required_providers {
+    aws = {
+      version = ">= 2.7.0"
+      source = "hashicorp/aws"
+    }
+  }
+}
 provider "aws" {
-	region     				= "${var.region}"
+	region     	= var.region
 }
 
 resource "aws_s3_bucket" "website_s3" {
@@ -43,9 +53,12 @@ resource "null_resource" "upload_files_s3" {
 }
 
 resource "null_resource" "delete_files_s3" {
+	triggers = {
+		s3_bucket_id = aws_s3_bucket.website_s3.id
+	}
 	provisioner "local-exec" {
-	  when    = "destroy"
-	  command = "aws s3 rm s3://${aws_s3_bucket.website_s3.id} --recursive"
+	  when    = destroy
+	  command = "aws s3 rm s3://${self.triggers.s3_bucket_id} --recursive"
 	}
 }
 
@@ -53,7 +66,7 @@ resource "null_resource" "delete_files_s3" {
 data resource is to check its existence via terraform */
 
 data "aws_acm_certificate" "site_cert" {
-	domain = "${var.domain_name}"
+	domain = var.domain_name
 	statuses = ["ISSUED"]
 }
 
@@ -70,8 +83,8 @@ resource "aws_cloudfront_distribution" "site_distribution" {
  	    origin_ssl_protocols   =["TLSv1", "TLSv1.1", "TLSv1.2"]
  	  }
 
- 	  domain_name = "${aws_s3_bucket.website_s3.website_endpoint}"
- 	  origin_id = "${var.domain_name}"
+ 	  domain_name = aws_s3_bucket.website_s3.website_endpoint
+ 	  origin_id = var.domain_name
  	}
  	enabled             = true
  	#retain_on_delete    = true
@@ -82,7 +95,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
  	  viewer_protocol_policy = "redirect-to-https"
  	  allowed_methods  = ["GET", "HEAD"]
  	  cached_methods   = ["GET", "HEAD"]
- 	  target_origin_id = "${var.domain_name}"
+ 	  target_origin_id = var.domain_name
 
  	  forwarded_values {
  	    query_string = false
@@ -91,10 +104,9 @@ resource "aws_cloudfront_distribution" "site_distribution" {
  	    }
  	  }
  	}
- 	aliases = ["${var.domain_name}"]
+ 	aliases = [var.domain_name]
 
  	viewer_certificate {
- 	  acm_certificate_arn = "${data.aws_acm_certificate.site_cert.arn}"
  	  ssl_support_method  = "sni-only"
  	}
 
@@ -108,17 +120,17 @@ resource "aws_cloudfront_distribution" "site_distribution" {
 /* Using an existing AWS hosted zone (if you register your domain with Amazon, this hosted zone will be created automatically. You can delete the entries so that the records are terraform controlled.) */
 
 data "aws_route53_zone" "hosted-zone" {
-	name = "${var.domain_name}"
+	name = var.domain_name
 }
 
 resource "aws_route53_record" "root_record" {
-	zone_id = "${data.aws_route53_zone.hosted-zone.zone_id}"
+	zone_id = data.aws_route53_zone.hosted-zone.zone_id
 	name    = ""
 	type    = "A"
 
 	alias {
-	  name                    = "${aws_cloudfront_distribution.site_distribution.domain_name}"
-	  zone_id                 = "${aws_cloudfront_distribution.site_distribution.hosted_zone_id}"
+	  name                    = aws_cloudfront_distribution.site_distribution.domain_name
+	  zone_id                 = aws_cloudfront_distribution.site_distribution.hosted_zone_id
 	  evaluate_target_health  = false
 	}
 }
