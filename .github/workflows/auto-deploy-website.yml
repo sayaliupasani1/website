@@ -7,10 +7,6 @@ jobs:
   install-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - name: setting up env
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secret.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secret.AWS_SECRET_ACCESS_KEY }}
       - uses: actions/checkout@v3
       - run: sudo apt-get update
       - run: sudo apt-get -y install hugo
@@ -20,4 +16,8 @@ jobs:
       - run: sudo apt install terraform=0.13.0
       - run: hugo
       - run: terraform version
-      - run: bash deploy.sh
+      - name: setting up env and deploying
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secret.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secret.AWS_SECRET_ACCESS_KEY }}
+        run: bash deploy.sh
