@@ -10,6 +10,26 @@ section:
 # Your experiences
 experiences:
 - company:
+    name: Dyspatch
+    url: "https://www.dyspatch.io/"
+    location: Victoria, BC
+    # company overview
+    #overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+  positions:
+  - designation: Production Engineer/DevOps
+    start: October 2021
+    # don't provide end date if you are currently working there. It will be replaced by "Present"
+    # end: Dec 2020
+    # give some points about what was your responsibilities at the company.
+    responsibilities:
+    - Implemented VPN using Aviatrix services to secure the access to our AWS Infrastructure. 
+    - Develop and maintain AWS infrastructure resources using Terraform.
+    - Create and maintain automated CI/CD pipelines for deployment of micro-services using Jenkins and GitHub Actions.
+    - Ensure availability, security and performance of the AWS production systems.
+    - Deploy containerized applications to the Kubernetes clusters using Helm and Rancher.
+    - Planning and upgrading Kubernetes clusters.
+
+- company:
     name: Bambora.
     url: "https://www.bambora.com/"
     location: Victoria, BC
@@ -19,7 +39,7 @@ experiences:
   - designation: Site Reliability Engineer, Infrastructure.
     start: January 2020
     # don't provide end date if you are currently working there. It will be replaced by "Present"
-    # end: Dec 2020
+    end: October 2021
     # give some points about what was your responsibilities at the company.
     responsibilities:
     - Design the infrastructure as a part of datacenter migration considering scalability, security and multi-datacenter requirements

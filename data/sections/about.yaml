@@ -6,17 +6,17 @@ section:
   showOnNavbar: true
 
 # your designation
-designation: DevOps | Network Engineer
+designation: Production | DevOps Engineer
 # your company information
 company:
-  name: Bambora
-  url: "https://www.bambora.com/"
+  name: Dyspatch
+  url: "https://www.dyspatch.io/"
 
 # your resume. this file path should be relative to you "static" directory
 resume: "files/Sayali_Upasani_CV.pdf"
 
 # a summary about you
-summary: 'I enjoy designing infrastructure, codifying the process of building it up, and to be fair even troubleshooting it :)'
+summary: 'I enjoy designing infrastructure, codifying and automating the process of building it up, and to be fair even troubleshooting it :)'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -50,8 +50,20 @@ socialLinks:
 # currently supported colors: blue, yellow, pink, green, sky, orange
 softSkills:
 - name: Infrastructure
-  percentage: 75
+  percentage: 90
+  color: green
+- name: Terraform
+  percentage: 90
+  color: blue
+- name: AWS
+  percentage: 70
+  color: yellow
+- name: Jenkins
+  percentage: 60
   color: orange
+- name: Kubernetes
+  percentage: 20
+  color: pink
 - name: Load Balancers
   percentage: 90
   color: sky
@@ -61,9 +73,6 @@ softSkills:
 - name: Firewalls
   percentage: 90
   color: green
-- name: Terraform
-  percentage: 70
-  color: blue
 - name: Docker
   percentage: 50
   color: pink
