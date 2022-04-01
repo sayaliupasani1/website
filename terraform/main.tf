@@ -2,11 +2,11 @@
 
 # Grab provider info from env variables
 terraform {
-	required_version = ">= 0.12"
+	required_version = "= 0.13.0"
 	
 	required_providers {
     aws = {
-      version = ">= 2.7.0"
+      version = "<= 3.9.0"
       source = "hashicorp/aws"
     }
   }
@@ -108,6 +108,7 @@ resource "aws_cloudfront_distribution" "site_distribution" {
 
  	viewer_certificate {
  	  ssl_support_method  = "sni-only"
+		acm_certificate_arn = data.aws_acm_certificate.site_cert.arn
  	}
 
  	restrictions {
