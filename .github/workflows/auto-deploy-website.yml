@@ -29,5 +29,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy-hugo-website
     steps:
-      - run: aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DIST --paths "/*"
+      - run: aws cloudfront create-invalidation --distribution-id "${{ secrets.CLOUDFRONT_DIST }}" --paths "/*"
 
