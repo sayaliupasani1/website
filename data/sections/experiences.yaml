@@ -10,6 +10,25 @@ section:
 # Your experiences
 experiences:
 - company:
+    name: Angi Inc
+    url: "https://www.angi.com/"
+    location: Chicago, IL
+    # company overview
+    #overview: Example Co. is a widely recognized company for cloud-native development. It builds tools for Kubernetes.
+  positions:
+  - designation: Infrastructure Engineer
+    start: June, 2022
+    end: January, 2026
+    responsibilities:
+    - Served as a technical owner for Amazon EKS platforms, defining GitOps-based deployment standards, upgradestrategies, and observability practices to deliver secure, resilient Kubernetes infrastructure for productionorkloads.
+    - Architected and executed a Karpenter upgrade initiative by identifying critical version incompatibilities andbuilding automated, pre-validated upgrade workflows, reducing upgrade risk by 80% and enabling safe cluster modernization.
+    - Led enterprise DNS migration from on-prem Infoblox to AWS Route53, designing scalable cross-account DNS architecture for multi-cluster EKS environments using Infrastructure as Code, improving reliability and reducing operational overhead
+    - Orchestrated migration of 150+ legacy Java applications from Ubuntu to Bottlerocket on EKS, reducing operational overhead by 40%, strengthening security posture, and maintaining cgroup v1 compatibility for legacy workloads.
+    - Modernized content delivery infrastructure by migrating Apache-based VM workloads to Cloudflare and S3,reducing infrastructure costs by 60% and enabling Kubernetes migration of Scala applications to improve scalability and resilience.
+    - Drove Infrastructure as Code adoption for Cloudflare by developing reusable Terraform modules and an automated IP monitoring system using AWS Lambda and Secrets Manager, reducing configuration errors by 90% and preventing production incidents caused by IP allowlist drift.
+    - Led exploratory platform research on synchronizing Backstage metadata with AWS tags and Kubernetes labels, improving cost attribution and FinOps visibility through consistent resource tagging.
+    
+- company:
     name: Dyspatch
     url: "https://www.dyspatch.io/"
     location: Victoria, BC

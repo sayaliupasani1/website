@@ -6,17 +6,17 @@ section:
   showOnNavbar: true
 
 # your designation
-designation: Production | DevOps Engineer
+designation: Instrastructure | DevOps Engineer | Site Reliability Engineer
 # your company information
-company:
-  name: Dyspatch
-  url: "https://www.dyspatch.io/"
+# company:
+#   name: Angi Inc
+#   url: "https://www.dyspatch.io/"
 
 # your resume. this file path should be relative to you "static" directory
 resume: "files/Sayali_Upasani_CV.pdf"
 
 # a summary about you
-summary: 'I enjoy designing infrastructure, codifying and automating the process of building it up, and to be fair even troubleshooting it :)'
+summary: 'I enjoy designing & architecting infrastructure, codifying and automating the process of building it up, and to be fair even troubleshooting it :)'
 
 # your social links
 # give as many as you want. use font-awesome for the icons.
@@ -49,32 +49,32 @@ socialLinks:
 # give the percentage between 50 to 100 with 5 intervals.
 # currently supported colors: blue, yellow, pink, green, sky, orange
 softSkills:
-- name: Infrastructure
-  percentage: 90
+- name: Infrastructure & Networking
+  percentage: 95
   color: green
-- name: Terraform
-  percentage: 90
+- name: Infrastructure as Code
+  percentage: 95
   color: blue
-- name: AWS
-  percentage: 70
+- name: Cloud Computing (AWS)
+  percentage: 90
   color: yellow
-- name: Jenkins
+- name: Automated Deployments
   percentage: 60
   color: orange
-- name: Kubernetes
-  percentage: 20
+- name: Kubernetes & Container Orchestration
+  percentage: 80
   color: pink
-- name: Load Balancers
-  percentage: 90
+- name: Observability & Monitoring
+  percentage: 70
   color: sky
-- name: Ansible
-  percentage: 75
-  color: yellow
-- name: Firewalls
+- name: Configuration Management
   percentage: 90
+  color: yellow
+- name: Security & Compliance
+  percentage: 75
   color: green
-- name: Docker
-  percentage: 50
+- name: Programming & Scripting
+  percentage: 65
   color: pink
 
 # you can also provide color code instead of pre-defined color name
