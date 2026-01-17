@@ -1,6 +1,7 @@
 /* Custom CSS overrides for avatar image */
 .home img {
   object-fit: cover;
+  object-position: top center;
   width: 148px;
   height: 148px;
 }
