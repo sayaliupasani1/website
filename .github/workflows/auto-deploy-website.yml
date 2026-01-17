@@ -36,6 +36,8 @@ jobs:
       AWS_SECRET_ACCESS_KEY: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
       AWS_DEFAULT_REGION: us-east-1
     steps:
-      - run: sudo apt-get -y install awscli
+      - run: wget -O /tmp/awscli.zip https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip
+      - run: unzip /tmp/awscli.zip -d /tmp/
+      - run: sudo /tmp/aws/install --update
       - run: aws cloudfront create-invalidation --distribution-id "${{ secrets.CLOUDFRONT_DIST }}" --paths "/*"
 
