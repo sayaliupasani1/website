@@ -1,9 +1,14 @@
 /* Custom CSS overrides for avatar image */
 .home img {
   object-fit: cover;
-  object-position: top center;
+  object-position: center 60%;
   width: 148px;
   height: 148px;
+}
+
+/* Adjust background image to show more of the lower section */
+.home .background {
+  background-position: center 70% !important;
 }
 
 /* Fix soft skills circular progress - prevent text cutoff */
