@@ -72,7 +72,7 @@ experiences:
     location: New Jersey, US
     #overview: PreExample Co. is a gateway company to enter into Example co. So, nothing special here.
   positions:
-  - designation: Tier3 TAC Engineer
+  - designation: Premium Network Engineer
     start: Oct 2018
     end: April 2019
     responsibilities:
@@ -81,7 +81,7 @@ experiences:
     - Recreate scenarios for debugging complex network issues
     - Contribute to building knowledge base
 
-  - designation: Tier2 TAC Engineer
+  - designation: Network Engineer
     start: Nov 2015
     end: Sep 2018
     responsibilities:

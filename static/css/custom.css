@@ -63,3 +63,29 @@
   text-align: center !important;
   box-sizing: border-box !important;
 }
+
+/* Change experience timeline line color to dark terracotta to match sunset background */
+.circle {
+  background-color: #8c3c2b !important;
+}
+
+.timeline .vertical-line::after {
+  border-left-color: #8c3c2b !important;
+}
+
+.timeline .horizontal-line hr {
+  border-top-color: #8c3c2b !important;
+}
+
+.timeline .horizontal-line .corner {
+  border-color: #8c3c2b !important;
+}
+
+/* Change experience titles to match timeline color */
+.experiences-section .experience-entry-heading h5,
+.experiences-section .experience-entry-heading h5 a,
+.experiences-section .experience-entry-heading h6,
+.experiences-section .experience-entry-heading h6 a,
+.experiences-section .positions .designation {
+  color: #8c3c2b !important;
+}
