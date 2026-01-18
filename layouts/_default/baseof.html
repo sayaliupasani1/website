@@ -9,9 +9,10 @@
     {{ block "header" . }} {{ end }}
 
     <!-- ADD GOOGLE ANALYTICS IF ENABLED -->
-    {{ if .Site.GoogleAnalytics }}
+    {{/* Google Analytics disabled - template not available in this Hugo version */}}
+    {{/* {{ if .Site.GoogleAnalytics }}
       {{ template "_internal/google_analytics_async.html" . }}
-    {{ end }}
+    {{ end }} */}}
   </head>
 
   <body data-spy="scroll" data-target="#TableOfContents" data-offset="80">

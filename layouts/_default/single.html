@@ -68,9 +68,10 @@
         {{ partial "navigators/next-prev-navigator.html" . }}
       <hr />
       <!-- Add Disqus forum  -->
-      {{ if .Site.DisqusShortname }}
+      {{/* Disqus disabled - not configured */}}
+      {{/* {{ if .Site.DisqusShortname }}
           {{ partial "disqus.html" . }}
-      {{ end }}
+      {{ end }} */}}
       </div>
     </div>
   </div>
