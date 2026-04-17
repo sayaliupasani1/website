@@ -89,3 +89,42 @@
 .experiences-section .positions .designation {
   color: #8c3c2b !important;
 }
+
+/* Normalize post card hero images to a consistent landscape aspect ratio
+   so cards have uniform heights regardless of source image dimensions. */
+.post-card-holder .card-img-top {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Recipe layout — expand content area to fill space (no TOC) */
+.recipe-page-content {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* When content-section contains a recipe, take the TOC's share too */
+.content-section:has(.recipe-page-content) {
+  flex: 80% !important;
+  max-width: 80% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Extend the recipe's cream background across the full page so the sidebar
+   column blends in seamlessly instead of showing the site's white background. */
+.wrapper:has(.recipe-page-content),
+.wrapper:has(.recipe-page-content) .sidebar-section,
+.wrapper:has(.recipe-page-content) .sidebar-holder,
+.wrapper:has(.recipe-page-content) .sidebar {
+  background-color: #F9F4EC !important;
+}
+
+body:has(.recipe-page-content) {
+  background-color: #F9F4EC !important;
+}
